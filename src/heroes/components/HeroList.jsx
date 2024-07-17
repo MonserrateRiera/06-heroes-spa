@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useMemo } from "react";
 
 import { getHeroesByPublisher } from "../helpers";
+import { HeroCard } from "./HeroCard";
 
 export const HeroList = ({ publisher }) => {
     console.log(publisher);
-    const heroes = getHeroesByPublisher( publisher );
+    const heroes = useMemo ( () => getHeroesByPublisher( publisher ), [publisher] );
   return (
-    <ul>
-        {heroes.map(heroe => {
-            return <li key={heroe.id}>{ JSON.stringify(heroe) }</li>
-        })}
-    </ul>
+    <div className="row rows-cols-1 row-cols-md-3 g-3">
+        {heroes.map(heroe => (
+           <HeroCard 
+              key={ heroe.id }
+              { ...heroe }
+           />
+        ))
+        }
+    </div>
   )
 };
