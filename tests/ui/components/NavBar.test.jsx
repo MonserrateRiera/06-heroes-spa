@@ -6,7 +6,7 @@ import { MemoryRouter, useNavigate } from "react-router-dom"
 
 const mockUseNavigate = jest.fn();
 
-//Mocker es hookusenavigate
+//Mocker es hook usenavigate
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
     useNavigate: () => mockUseNavigate

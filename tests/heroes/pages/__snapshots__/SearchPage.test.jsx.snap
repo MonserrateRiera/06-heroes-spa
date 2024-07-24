@@ -16,7 +16,9 @@ exports[`pruebas en <SeachPage /> deberia mostrar correctamente con valores por 
         Searching
       </h4>
       <hr />
-      <form>
+      <form
+        role="form"
+      >
         <input
           autocomplete="off"
           class="form-control"
